@@ -1,0 +1,34 @@
+<div class="checkout-page">
+  @if (step() !== 'confirmation') {
+    <div class="checkout-page__stepper">
+      @for (s of steps.slice(0, 3); track s; let i = $index) {
+        <div class="stepper-step" [class.stepper-step--active]="step() === s" [class.stepper-step--done]="currentIndex() > i">
+          <div class="stepper-step__dot">{{ currentIndex() > i ? '✓' : i + 1 }}</div>
+          <span>{{ labels[s] }}</span>
+        </div>
+        @if (i < 2) { <div class="stepper-sep" [class.stepper-sep--done]="currentIndex() > i"></div> }
+      }
+    </div>
+  }
+
+  <div class="checkout-page__content">
+    @switch (step()) {
+      @case ('shipping') {
+        <app-shipping-form (submitted)="onShipping($event)" />
+      }
+      @case ('payment') {
+        <app-payment-form (submitted)="onPayment($event)" />
+      }
+      @case ('review') {
+        <app-order-review
+          [shipping]="shipping()!"
+          [payment]="payment()!"
+          (confirmed)="onConfirm()"
+          (back)="backToPayment()" />
+      }
+      @case ('confirmation') {
+        <app-order-confirmation [order]="order()!" />
+      }
+    }
+  </div>
+</div>

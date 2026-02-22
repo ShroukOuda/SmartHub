@@ -1,0 +1,7 @@
+.stars { display: inline-flex; align-items: center; gap: 1px; }
+.stars--sm { font-size: 12px; }
+.stars--md { font-size: 16px; }
+.stars--lg { font-size: 22px; }
+.star--full, .star--half { color: var(--primary); }
+.star--empty { color: var(--border-hover); }
+.rating-value { font-size: .75em; color: var(--text-muted); margin-left: 4px; }

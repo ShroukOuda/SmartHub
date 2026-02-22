@@ -1,0 +1,10 @@
+<span class="stars" [class]="'stars--' + size">
+  @for (star of stars; track $index) {
+    <span class="star" [class.star--full]="star.full" [class.star--half]="star.half" [class.star--empty]="star.empty">
+      @if (star.full) { ★ }
+      @else if (star.half) { ⯨ }
+      @else { ☆ }
+    </span>
+  }
+  <span class="rating-value">{{ rating }}</span>
+</span>

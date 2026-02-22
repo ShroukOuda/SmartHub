@@ -1,0 +1,23 @@
+<div class="cart-page">
+  <div class="cart-page__header">
+    <h1 class="cart-page__title">Shopping Cart</h1>
+    @if (cart.itemCount() > 0) {
+      <span class="cart-page__count">{{ cart.itemCount() }} item{{ cart.itemCount() === 1 ? '' : 's' }}</span>
+    }
+  </div>
+
+  @if (cart.items().length === 0) {
+    <app-empty-cart />
+  } @else {
+    <div class="cart-page__layout">
+      <div class="cart-page__items">
+        @for (item of cart.items(); track item.product.id) {
+          <app-cart-item [item]="item" />
+        }
+      </div>
+      <aside class="cart-page__sidebar">
+        <app-cart-summary />
+      </aside>
+    </div>
+  }
+</div>

@@ -1,59 +1,138 @@
-# EComm
+# SmartHub 🛒
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+A modern e-commerce web application built with Angular 21, featuring a clean architecture and responsive design.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-21-red?logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwind-css)
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
+- 🏠 **Home Page** - Hero banner, featured products, categories showcase, and brand highlights
+- 📦 **Product Catalog** - Browse products with filtering, sorting, and search functionality
+- 🔍 **Product Details** - Detailed product view with images, reviews, and related products
+- 🛒 **Shopping Cart** - Add/remove items, update quantities, persistent cart storage
+- 💳 **Checkout** - Multi-step checkout with shipping form, payment, and order review
+- 👤 **User Authentication** - Login, registration, and profile management
+- 🌙 **Theme Support** - Light/dark mode toggle
+- 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
+- 🔔 **Notifications** - Toast notifications for user feedback
+
+## 🏗️ Project Structure
+
+```
+src/app/
+├── core/                  # Core functionality
+│   ├── guards/           # Route guards (auth, cart)
+│   ├── models/           # Shared interfaces
+│   └── services/         # Global services (auth, theme, notification)
+├── features/             # Feature modules
+│   ├── home/            # Landing page
+│   ├── products/        # Product listing & details
+│   ├── cart/            # Shopping cart
+│   ├── checkout/        # Checkout flow
+│   ├── user/            # User authentication
+│   ├── contact/         # Contact page
+│   ├── about/           # About page
+│   └── static/          # Static pages (FAQ, Privacy, Terms, etc.)
+├── layouts/              # Layout components
+│   ├── header/          # Navigation header
+│   └── footer/          # Site footer
+└── shared/               # Shared resources
+    ├── components/      # Reusable components
+    ├── directives/      # Custom directives
+    └── pipes/           # Custom pipes
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js 18+ 
+- npm 10+
 
-```bash
-ng generate component component-name
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd SmartHub
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open your browser and navigate to `http://localhost:4200`
+
+## 📜 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start development server |
+| `npm run build` | Build for production |
+| `npm run watch` | Build in watch mode |
+
+## 🛠️ Tech Stack
+
+- **Framework:** Angular 21 (Standalone Components)
+- **State Management:** Angular Signals
+- **Styling:** Tailwind CSS 4
+- **Icons:** Lucide Angular
+- **Language:** TypeScript 5.9
+- **Build Tool:** Angular CLI
+
+## 🔑 Key Features Implementation
+
+### Lazy Loading
+All feature modules are lazy-loaded for optimal performance:
+```typescript
+{
+  path: 'products',
+  loadChildren: () => import('./features/products/routes').then(m => m.PRODUCTS_ROUTES)
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+### Reactive State with Signals
+Modern state management using Angular Signals:
+```typescript
+private _items = signal<ICartItem[]>([]);
+readonly items = this._items.asReadonly();
+readonly itemCount = computed(() => this._items().reduce((s, i) => s + i.quantity, 0));
 ```
 
-## Building
+### Persistent Storage
+Cart and authentication state persisted to localStorage for seamless user experience.
 
-To build the project run:
+## 📁 Feature Modules
 
-```bash
-ng build
-```
+| Module | Description |
+|--------|-------------|
+| **Home** | Landing page with hero, featured products, categories |
+| **Products** | Product listing, filtering, sorting, and detail pages |
+| **Cart** | Shopping cart management with quantity controls |
+| **Checkout** | Multi-step checkout (shipping → payment → review → confirmation) |
+| **User** | Authentication (login/register) and profile management |
+| **Contact** | Contact form |
+| **Static** | FAQ, Shipping, Returns, Privacy Policy, Terms of Service |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🎨 Styling
 
-## Running unit tests
+The project uses Tailwind CSS 4 with a custom configuration for consistent theming:
+- Responsive breakpoints
+- Dark mode support
+- Custom color palette
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 📄 License
 
-```bash
-ng test
-```
+This project is private and for educational purposes.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Built with ❤️ using Angular

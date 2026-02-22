@@ -1,0 +1,14 @@
+.order-review__title { font-size: 18px; font-weight: 600; margin: 0 0 20px; }
+.order-review__section { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
+.order-review__section h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #aaa; margin: 0 0 6px; }
+.order-review__section p { font-size: 14px; color: #333; line-height: 1.6; margin: 0; }
+.order-review__items { margin-bottom: 20px; }
+.order-review__item { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #f8f8f8; font-size: 13px; color: #333; }
+.order-review__item img { width: 40px; height: 40px; object-fit: cover; border-radius: 2px; }
+.order-review__totals { margin-bottom: 20px; }
+.order-review__row { display: flex; justify-content: space-between; font-size: 14px; color: #555; padding: 6px 0; }
+.order-review__row--total { font-size: 16px; font-weight: 600; color: #1a1a1a; border-top: 1px solid #e8e8e8; margin-top: 6px; padding-top: 12px; }
+.order-review__btn { display: block; width: 100%; padding: 14px; background: #1a1a1a; color: #fff; border: none; border-radius: 3px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.order-review__btn:hover { background: #333; }
+.order-review__back { display: block; width: 100%; padding: 10px; background: none; border: none; color: #888; font-size: 13px; cursor: pointer; margin-top: 10px; }
+.order-review__back:hover { text-decoration: underline; }

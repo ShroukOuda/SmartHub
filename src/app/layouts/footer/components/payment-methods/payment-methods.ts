@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-payment-methods',
+  standalone: true,
+  template: `
+    <div class="payments">
+      <span class="payments__label">We accept</span>
+      <div class="payments__icons">
+        @for (method of methods; track method) {
+          <span class="payments__method">{{ method }}</span>
+        }
+      </div>
+    </div>
+  `,
+  styles: [`
+    .payments { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .payments__label { font-size: 12px; color: #aaa; }
+    .payments__icons { display: flex; gap: 6px; }
+    .payments__method { padding: 4px 10px; border: 1px solid #e0e0e0; border-radius: 3px; font-size: 11px; font-weight: 600; color: #888; background: #fafafa; letter-spacing: 0.03em; }
+  `]
+})
+export class PaymentMethodsComponent {
+  methods = ['Visa', 'Mastercard', 'Amex', 'PayPal', 'Apple Pay'];
+}

@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a routerLink="/" class="footer__logo">
+        <span class="footer__logo-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </span>
+        SmartHub
+      </a>
+      <p class="footer__tagline">Your ultimate tech destination. Authorized retailer for all major brands.</p>
+      <app-social-media />
+    </div>
+    <app-footer-links />
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__bottom-inner">
+      <span class="footer__copy">© {{ year }} SmartHub. All rights reserved.</span>
+      <app-payment-methods />
+    </div>
+  </div>
+</footer>

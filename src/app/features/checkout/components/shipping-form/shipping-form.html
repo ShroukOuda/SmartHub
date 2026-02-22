@@ -1,0 +1,48 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="checkout-form">
+  <h2 class="checkout-form__section">Shipping Information</h2>
+  <div class="checkout-form__row">
+    <div class="field" [class.field--error]="isInvalid('firstName')">
+      <label>First Name</label>
+      <input formControlName="firstName" placeholder="Jane" />
+      @if (isInvalid('firstName')) { <span class="field__error">Required</span> }
+    </div>
+    <div class="field" [class.field--error]="isInvalid('lastName')">
+      <label>Last Name</label>
+      <input formControlName="lastName" placeholder="Smith" />
+      @if (isInvalid('lastName')) { <span class="field__error">Required</span> }
+    </div>
+  </div>
+  <div class="field" [class.field--error]="isInvalid('email')">
+    <label>Email</label>
+    <input formControlName="email" type="email" placeholder="jane@example.com" />
+    @if (isInvalid('email')) { <span class="field__error">Valid email required</span> }
+  </div>
+  <div class="field" [class.field--error]="isInvalid('address')">
+    <label>Address</label>
+    <input formControlName="address" placeholder="123 Main Street" />
+    @if (isInvalid('address')) { <span class="field__error">Required</span> }
+  </div>
+  <div class="checkout-form__row">
+    <div class="field" [class.field--error]="isInvalid('city')">
+      <label>City</label>
+      <input formControlName="city" placeholder="London" />
+    </div>
+    <div class="field" [class.field--error]="isInvalid('zip')">
+      <label>ZIP / Post Code</label>
+      <input formControlName="zip" placeholder="EC1A 1BB" />
+    </div>
+  </div>
+  <div class="field" [class.field--error]="isInvalid('country')">
+    <label>Country</label>
+    <select formControlName="country">
+      <option value="">Select country</option>
+      <option value="GB">United Kingdom</option>
+      <option value="US">United States</option>
+      <option value="EG">Egypt</option>
+      <option value="DE">Germany</option>
+      <option value="FR">France</option>
+      <option value="AE">UAE</option>
+    </select>
+  </div>
+  <button type="submit" class="checkout-form__btn">Continue to Payment →</button>
+</form>

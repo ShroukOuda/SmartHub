@@ -1,0 +1,31 @@
+<div class="product-list-page">
+  <div class="product-list-page__header">
+    <h1 class="product-list-page__title">All Products</h1>
+    <div class="product-list-page__toolbar">
+      <span class="product-list-page__count">{{ products().length }} products</span>
+      <app-product-sorting [value]="sort()" (valueChange)="onSortChange($event)" />
+    </div>
+  </div>
+
+  <div class="product-list-page__layout">
+    <aside class="product-list-page__sidebar">
+      <app-product-filters
+        [filters]="filters()"
+        [categories]="categories"
+        [brands]="brands"
+        (filtersChange)="onFiltersChange($event)" />
+    </aside>
+
+    <main class="product-list-page__grid">
+      @if (products().length === 0) {
+        <div class="product-list-page__empty">
+          <p>No products match your filters.</p>
+        </div>
+      } @else {
+        @for (product of products(); track product.id) {
+          <app-product-card [product]="product" />
+        }
+      }
+    </main>
+  </div>
+</div>

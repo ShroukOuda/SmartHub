@@ -1,0 +1,10 @@
+.checkout-page { max-width: 580px; margin: 0 auto; padding: 48px 24px; }
+.checkout-page__stepper { display: flex; align-items: center; margin-bottom: 40px; }
+.stepper-step { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }
+.stepper-step__dot { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-secondary); border: 2px solid var(--border); color: var(--text-muted); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+.stepper-step--active .stepper-step__dot { background: var(--primary); border-color: var(--primary); color: var(--primary-fg); }
+.stepper-step--done .stepper-step__dot { background: var(--success); border-color: var(--success); color: #fff; }
+.stepper-step span { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.stepper-step--active span, .stepper-step--done span { color: var(--text); font-weight: 600; }
+.stepper-sep { flex: 1; height: 2px; background: var(--border); margin: 0 8px; margin-bottom: 18px; transition: background .3s; }
+.stepper-sep--done { background: var(--success); }
