@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { OrderService } from '../../../checkout/services/order';
+import { Order } from '../../../checkout/services/order';
 
 @Component({
   selector: 'app-orders-page',
@@ -49,5 +49,5 @@ import { OrderService } from '../../../checkout/services/order';
   `]
 })
 export class OrdersPageComponent {
-  constructor(public orderService: OrderService) {}
+  constructor(public orderService: Order) {}
 }

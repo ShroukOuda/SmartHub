@@ -1,7 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { OrderService } from '../../../checkout/services/order';
+import { Order } from '../../../checkout/services/order';
 import { IOrder } from '../../../checkout/models/iorder';
 
 @Component({
@@ -57,7 +57,7 @@ import { IOrder } from '../../../checkout/models/iorder';
 })
 export class OrderDetailPageComponent implements OnInit {
   order = signal<IOrder | null>(null);
-  constructor(private route: ActivatedRoute, private orderService: OrderService) {}
+  constructor(private route: ActivatedRoute, private orderService: Order) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe(p => {
       const id = p.get('id');

@@ -3,7 +3,7 @@ import { IOrder, IShippingInfo, IPaymentInfo } from '../models/iorder';
 import { Cart } from '../../cart/services/cart';
 
 @Injectable({ providedIn: 'root' })
-export class OrderService {
+export class Order {
   private _orders = signal<IOrder[]>(this.load());
   readonly orders = this._orders.asReadonly();
   readonly lastOrder = signal<IOrder | null>(null);

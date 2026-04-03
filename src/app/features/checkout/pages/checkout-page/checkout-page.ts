@@ -4,7 +4,7 @@ import { ShippingForm } from '../../components/shipping-form/shipping-form';
 import { PaymentForm } from '../../components/payment-form/payment-form';
 import { OrderReview } from '../../components/order-review/order-review';
 import { OrderConfirmation } from '../../components/order-confirmation/order-confirmation';
-import { OrderService } from '../../services/order';
+import { Order } from '../../services/order';
 import { IShippingInfo, IPaymentInfo, IOrder } from '../../models/iorder';
 
 type Step = 'shipping' | 'payment' | 'review' | 'confirmation';
@@ -25,7 +25,7 @@ export class CheckoutPage {
   steps: Step[] = ['shipping', 'payment', 'review', 'confirmation'];
   labels = { shipping: 'Shipping', payment: 'Payment', review: 'Review', confirmation: 'Done' };
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: Order) {}
 
   stepIndex(s: Step) { return this.steps.indexOf(s); }
   currentIndex()     { return this.steps.indexOf(this.step()); }
