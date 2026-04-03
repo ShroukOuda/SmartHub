@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IProduct } from '../../../core/models/iproduct';
-import { CartService } from '../../../features/cart/services/cart';
+import { Cart } from '../../../features/cart/services/cart';
 import { NotificationService } from '../../../core/services/notification';
 import { StarRatingComponent } from '../star-rating/star-rating';
 
@@ -18,7 +18,7 @@ export class ProductCardComponent {
   @Input({ required: true }) product!: IProduct;
 
   constructor(
-    private cart: CartService,
+    private cart: Cart,
     private notify: NotificationService
   ) {}
 

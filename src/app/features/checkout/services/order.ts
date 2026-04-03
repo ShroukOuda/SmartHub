@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { IOrder, IShippingInfo, IPaymentInfo } from '../models/iorder';
-import { CartService } from '../../cart/services/cart';
+import { Cart } from '../../cart/services/cart';
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
@@ -8,7 +8,7 @@ export class OrderService {
   readonly orders = this._orders.asReadonly();
   readonly lastOrder = signal<IOrder | null>(null);
 
-  constructor(private cart: CartService) {}
+  constructor(private cart: Cart) {}
 
   private load(): IOrder[] {
     try { return JSON.parse(localStorage.getItem('orders') || '[]'); }

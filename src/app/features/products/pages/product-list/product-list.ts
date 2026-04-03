@@ -1,7 +1,8 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService, IProductFilters } from '../../services/product';
+import { Product } from '../../services/product';
+import { IProductFilters } from '../../models/iproduct-filters';
 import { IProduct } from '../../../../core/models/iproduct';
 import { ICategory } from '../../../../core/models/icategory';
 import { ProductCardComponent } from '../../../../shared/components/product-card/product-card';
@@ -23,7 +24,7 @@ export class ProductList implements OnInit {
   brands: string[] = [];
   showFilters = signal(true);
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) {}
+  constructor(private productService: Product, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.categories = this.productService.getCategories();

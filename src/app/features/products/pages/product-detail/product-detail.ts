@@ -2,8 +2,8 @@ import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../../../core/models/iproduct';
-import { ProductService } from '../../services/product';
-import { CartService } from '../../../cart/services/cart';
+import { Product } from '../../services/product';
+import { Cart } from '../../../cart/services/cart';
 import { NotificationService } from '../../../../core/services/notification';
 import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating';
 import { ProductReviews } from '../../components/product-reviews/product-reviews';
@@ -23,8 +23,8 @@ export class ProductDetail implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService,
-    private cart: CartService,
+    private productService: Product,
+    private cart: Cart,
     private notify: NotificationService
   ) {}
 

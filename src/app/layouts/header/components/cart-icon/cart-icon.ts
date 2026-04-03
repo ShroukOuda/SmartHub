@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CartService } from '../../../../features/cart/services/cart';
+import { Cart } from '../../../../features/cart/services/cart';
 
 @Component({
   selector: 'app-cart-icon',
@@ -25,5 +25,5 @@ import { CartService } from '../../../../features/cart/services/cart';
   `]
 })
 export class CartIconComponent {
-  cart = inject(CartService);
+  cart = inject(Cart);
 }
