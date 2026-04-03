@@ -1,0 +1,20 @@
+<section class="reviews">
+    <h2 class="reviews__title">Customer Reviews</h2>
+    <div class="reviews__summary">
+    <span class="reviews__avg">{{ rating }}</span>
+    <app-star-rating [rating]="rating" size="lg" />
+    <span class="reviews__count">{{ count }} reviews</span>
+    </div>
+    <div class="reviews__list">
+    @for (review of mockReviews; track review.id) {
+        <div class="review">
+        <div class="review__header">
+            <span class="review__author">{{ review.author }}</span>
+            <app-star-rating [rating]="review.rating" size="sm" />
+            <span class="review__date">{{ review.date }}</span>
+        </div>
+        <p class="review__text">{{ review.text }}</p>
+        </div>
+    }
+    </div>
+</section>

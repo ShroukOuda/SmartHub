@@ -1,0 +1,10 @@
+<div class="sorting">
+    <label class="sorting__label">Sort:</label>
+    <select class="sorting__select" [ngModel]="value" (ngModelChange)="valueChange.emit($event)">
+    <option value="">Featured</option>
+    <option value="price-asc">Price ↑</option>
+    <option value="price-desc">Price ↓</option>
+    <option value="rating">Best Rated</option>
+    <option value="newest">New Arrivals</option>
+    </select>
+</div>

@@ -1,0 +1,8 @@
+<section class="related">
+    <h2 class="related__title">You might also like</h2>
+    <div class="related__grid">
+    @for (product of related; track product.id) {
+        <app-product-card [product]="product" />
+    }
+    </div>
+</section>

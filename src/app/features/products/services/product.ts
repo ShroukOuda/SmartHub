@@ -1,20 +1,12 @@
 import { Injectable } from '@angular/core';
 import { StaticProductsService } from '../../../core/services/static-products';
 import { IProduct } from '../../../core/models/iproduct';
+import { IProductFilters } from '../models/iproduct-filters';
 
-export interface IProductFilters {
-  category?: string;
-  categories?: string[];
-  minPrice?: number;
-  maxPrice?: number;
-  search?: string;
-  sort?: 'price-asc' | 'price-desc' | 'rating' | 'newest';
-  brand?: string;
-  brands?: string[];
-}
+
 
 @Injectable({ providedIn: 'root' })
-export class ProductService {
+export class Product {
   constructor(private staticProducts: StaticProductsService) {}
 
   getFiltered(filters: IProductFilters): IProduct[] {

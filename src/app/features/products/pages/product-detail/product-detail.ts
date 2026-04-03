@@ -6,17 +6,17 @@ import { ProductService } from '../../services/product';
 import { CartService } from '../../../cart/services/cart';
 import { NotificationService } from '../../../../core/services/notification';
 import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating';
-import { ProductReviewsComponent } from '../../components/product-reviews/product-reviews';
-import { RelatedProductsComponent } from '../../components/related-products/related-products';
+import { ProductReviews } from '../../components/product-reviews/product-reviews';
+import { RelatedProducts } from '../../components/related-products/related-products';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, StarRatingComponent, ProductReviewsComponent, RelatedProductsComponent],
+  imports: [CommonModule, StarRatingComponent, ProductReviews, RelatedProducts],
   templateUrl: './product-detail.html',
   styleUrls: ['./product-detail.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetail implements OnInit {
   product = signal<IProduct | null>(null);
   selectedImage = signal<string>('');
   quantity = signal(1);

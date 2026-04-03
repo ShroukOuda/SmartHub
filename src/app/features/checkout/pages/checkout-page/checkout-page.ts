@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShippingFormComponent } from '../../components/shipping-form/shipping-form';
-import { PaymentFormComponent } from '../../components/payment-form/payment-form';
-import { OrderReviewComponent } from '../../components/order-review/order-review';
-import { OrderConfirmationComponent } from '../../components/order-confirmation/order-confirmation';
+import { ShippingForm } from '../../components/shipping-form/shipping-form';
+import { PaymentForm } from '../../components/payment-form/payment-form';
+import { OrderReview } from '../../components/order-review/order-review';
+import { OrderConfirmation } from '../../components/order-confirmation/order-confirmation';
 import { OrderService } from '../../services/order';
 import { IShippingInfo, IPaymentInfo, IOrder } from '../../models/iorder';
 
@@ -12,11 +12,11 @@ type Step = 'shipping' | 'payment' | 'review' | 'confirmation';
 @Component({
   selector: 'app-checkout-page',
   standalone: true,
-  imports: [CommonModule, ShippingFormComponent, PaymentFormComponent, OrderReviewComponent, OrderConfirmationComponent],
+  imports: [CommonModule, ShippingForm, PaymentForm, OrderReview, OrderConfirmation],
   templateUrl: './checkout-page.html',
   styleUrls: ['./checkout-page.css']
 })
-export class CheckoutPageComponent {
+export class CheckoutPage {
   step = signal<Step>('shipping');
   shipping = signal<IShippingInfo | null>(null);
   payment  = signal<IPaymentInfo | null>(null);

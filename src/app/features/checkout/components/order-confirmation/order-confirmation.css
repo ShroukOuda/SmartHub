@@ -1,0 +1,8 @@
+.confirmation { text-align: center; padding: 60px 20px; }
+.confirmation__check { width: 70px; height: 70px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+.confirmation__title { font-size: 28px; font-weight: 700; margin: 0 0 8px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.confirmation__id { font-size: 13px; color: var(--text-muted); margin: 0 0 20px; font-family: monospace; }
+.confirmation__msg { font-size: 15px; color: var(--text-secondary); line-height: 1.6; max-width: 440px; margin: 0 auto 32px; }
+.confirmation__actions { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.confirmation__link { color: var(--text-muted); font-size: 14px; text-decoration: none; }
+.confirmation__link:hover { color: var(--text); text-decoration: underline; }

@@ -1,0 +1,14 @@
+<section class="featured">
+    <div class="featured__header">
+    <div>
+        <h2 class="featured__title">Featured Products</h2>
+        <p class="featured__sub">Hand-picked by our tech experts</p>
+    </div>
+    <a routerLink="/products" class="btn-ghost">See all →</a>
+    </div>
+    <div class="featured__grid">
+    @for (product of products; track product.id) {
+        <app-product-card [product]="product" />
+    }
+    </div>
+</section>

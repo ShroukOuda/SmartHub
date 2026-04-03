@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ICartItem } from '../../models/icart-item';
-import { CartService } from '../../services/cart';
+import { Cart } from '../../services/cart';
 
 @Component({
   selector: 'app-cart-item',
@@ -11,10 +11,10 @@ import { CartService } from '../../services/cart';
   templateUrl: './cart-item.html',
   styleUrls: ['./cart-item.css']
 })
-export class CartItemComponent {
+export class CartItem {
   @Input({ required: true }) item!: ICartItem;
 
-  constructor(private cart: CartService) {}
+  constructor(private cart: Cart) {}
 
   increase(): void { this.cart.updateQuantity(this.item.product.id, this.item.quantity + 1); }
   decrease(): void { this.cart.updateQuantity(this.item.product.id, this.item.quantity - 1); }

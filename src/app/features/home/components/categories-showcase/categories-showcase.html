@@ -1,0 +1,21 @@
+<section class="categories">
+    <div class="categories__header">
+    <div>
+        <h2 class="categories__title">Browse Categories</h2>
+        <p class="categories__sub">Find exactly what you're looking for</p>
+    </div>
+    <a routerLink="/products" class="btn-ghost">View all →</a>
+    </div>
+    <div class="categories__grid">
+    @for (cat of categories; track cat.id) {
+        <a [routerLink]="['/products']" [queryParams]="{category: cat.slug}" class="cat-card">
+        <span class="cat-card__icon">{{ cat.icon }}</span>
+        <div class="cat-card__body">
+            <span class="cat-card__name">{{ cat.name }}</span>
+            <span class="cat-card__count">{{ cat.productCount }} products</span>
+        </div>
+        <svg class="cat-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+    }
+    </div>
+</section>

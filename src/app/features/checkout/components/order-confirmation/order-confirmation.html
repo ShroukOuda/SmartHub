@@ -1,0 +1,12 @@
+<div class="confirmation">
+    <div class="confirmation__check">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1 class="confirmation__title">Order Confirmed!</h1>
+    <p class="confirmation__id">{{ order.id }}</p>
+    <p class="confirmation__msg">Thank you! Your order is confirmed. We'll send shipping updates to <strong>{{ order.shipping.email }}</strong>.</p>
+    <div class="confirmation__actions">
+    <a routerLink="/user/orders" class="btn-primary">View Orders</a>
+    <a routerLink="/products" class="confirmation__link">Continue Shopping →</a>
+    </div>
+</div>

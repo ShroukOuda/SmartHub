@@ -6,26 +6,12 @@ import { ProductCardComponent } from '../../../../shared/components/product-card
 
 @Component({
   selector: 'app-related-products',
-  standalone: true,
   imports: [CommonModule, ProductCardComponent],
-  template: `
-    <section class="related">
-      <h2 class="related__title">You might also like</h2>
-      <div class="related__grid">
-        @for (product of related; track product.id) {
-          <app-product-card [product]="product" />
-        }
-      </div>
-    </section>
-  `,
-  styles: [`
-    .related { margin-top: 64px; }
-    .related__title { font-size: 20px; font-weight: 500; margin: 0 0 24px; }
-    .related__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-  `]
+  templateUrl: './related-products.html',
+  styleUrl: './related-products.css',
 })
-export class RelatedProductsComponent implements OnChanges {
-  @Input({ required: true }) product!: IProduct;
+export class RelatedProducts  implements OnChanges {
+   @Input({ required: true }) product!: IProduct;
   related: IProduct[] = [];
 
   constructor(private products: StaticProductsService) {}
@@ -35,4 +21,5 @@ export class RelatedProductsComponent implements OnChanges {
       .filter(p => p.id !== this.product.id)
       .slice(0, 4);
   }
+
 }

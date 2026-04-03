@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { HeroBannerComponent } from '../../components/hero-banner/hero-banner';
-import { CategoriesShowcaseComponent } from '../../components/categories-showcase/categories-showcase';
-import { FeaturedProductsComponent } from '../../components/featured-products/featured-products';
-import { BrandsShowcaseComponent } from '../../components/brands-showcase/brands-showcase';
+import { HeroBanner } from '../../components/hero-banner/hero-banner';
+import { CategoriesShowcase } from '../../components/categories-showcase/categories-showcase';
+import { FeaturedProducts } from '../../components/featured-products/featured-products';
+import { BrandsShowcase } from '../../components/brands-showcase/brands-showcase';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HeroBannerComponent, CategoriesShowcaseComponent, FeaturedProductsComponent, BrandsShowcaseComponent],
-  template: `
-    <app-hero-banner />
-    <app-brands-showcase />
-    <app-categories-showcase />
-    <app-featured-products />
-  `
+  imports: [HeroBanner, CategoriesShowcase, FeaturedProducts, BrandsShowcase],
+  templateUrl: './home-page.html',
+  styleUrl: './home-page.css',
 })
-export class HomePageComponent {}
+export class HomePage {
+
+}
+
+
+
+

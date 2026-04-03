@@ -3,7 +3,7 @@ import { ICartItem } from '../models/icart-item';
 import { IProduct } from '../../../core/models/iproduct';
 
 @Injectable({ providedIn: 'root' })
-export class CartService {
+export class Cart {
   private _items = signal<ICartItem[]>(this.load());
   readonly items = this._items.asReadonly();
   readonly itemCount = computed(() => this._items().reduce((s, i) => s + i.quantity, 0));

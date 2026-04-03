@@ -10,7 +10,7 @@ import { IShippingInfo } from '../../models/iorder';
   templateUrl: './shipping-form.html',
   styleUrls: ['./shipping-form.css']
 })
-export class ShippingFormComponent {
+export class ShippingForm {
   @Output() submitted = new EventEmitter<IShippingInfo>();
   private fb = inject(FormBuilder);
   form = this.fb.group({

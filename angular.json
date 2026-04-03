@@ -6,6 +6,11 @@
     "analytics": false
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "standalone": true
+    }
+  },
   "projects": {
     "SmartHub": {
       "projectType": "application",

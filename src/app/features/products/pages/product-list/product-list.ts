@@ -5,17 +5,17 @@ import { ProductService, IProductFilters } from '../../services/product';
 import { IProduct } from '../../../../core/models/iproduct';
 import { ICategory } from '../../../../core/models/icategory';
 import { ProductCardComponent } from '../../../../shared/components/product-card/product-card';
-import { ProductFiltersComponent } from '../../components/product-filters/product-filters';
-import { ProductSortingComponent } from '../../components/product-sorting/product-sorting';
+import { ProductFilters } from '../../components/product-filters/product-filters';
+import { ProductSorting } from '../../components/product-sorting/product-sorting';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent, ProductFiltersComponent, ProductSortingComponent],
+  imports: [CommonModule, ProductCardComponent, ProductFilters, ProductSorting],
   templateUrl: './product-list.html',
   styleUrls: ['./product-list.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductList implements OnInit {
   products = signal<IProduct[]>([]);
   filters  = signal<IProductFilters>({});
   sort     = signal<string>('');

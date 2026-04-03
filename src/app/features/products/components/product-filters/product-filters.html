@@ -1,0 +1,32 @@
+<aside class="filters card">
+    <div class="filters__group">
+    <h3 class="filters__label">Category</h3>
+    @for (cat of categories; track cat.id) {
+        <label class="filters__option">
+        <input type="checkbox" [value]="cat.slug" [checked]="isCategorySelected(cat.slug)" (change)="toggleCategory(cat.slug)" />
+        {{ cat.name }}
+        <span class="filters__option-count">{{ cat.productCount }}</span>
+        </label>
+    }
+    </div>
+    <div class="filters__divider"></div>
+    <div class="filters__group">
+    <h3 class="filters__label">Price Range</h3>
+    <div class="filters__price-row">
+        <input class="filters__price-input" type="number" placeholder="Min $" [ngModel]="filters.minPrice" (ngModelChange)="setMin($event)" min="0" />
+        <span class="filters__price-sep">–</span>
+        <input class="filters__price-input" type="number" placeholder="Max $" [ngModel]="filters.maxPrice" (ngModelChange)="setMax($event)" min="0" />
+    </div>
+    </div>
+    <div class="filters__divider"></div>
+    <div class="filters__group">
+    <h3 class="filters__label">Brand</h3>
+    @for (brand of brands; track brand) {
+        <label class="filters__option">
+        <input type="checkbox" [value]="brand" [checked]="isBrandSelected(brand)" (change)="toggleBrand(brand)" />
+        {{ brand }}
+        </label>
+    }
+    </div>
+    <button class="filters__reset" (click)="reset()">Reset All Filters</button>
+</aside>

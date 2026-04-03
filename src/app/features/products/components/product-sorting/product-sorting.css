@@ -1,0 +1,4 @@
+.sorting { display: flex; align-items: center; gap: 8px; }
+.sorting__label { font-size: 13px; color: var(--text-muted); white-space: nowrap; }
+.sorting__select { padding: 7px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; font-family: inherit; outline: none; background: var(--bg-secondary); color: var(--text); cursor: pointer; }
+.sorting__select:focus { border-color: var(--primary); }

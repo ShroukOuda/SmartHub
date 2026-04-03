@@ -5,36 +5,11 @@ import { IPaymentInfo } from '../../models/iorder';
 
 @Component({
   selector: 'app-payment-form',
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  template: `
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="checkout-form">
-      <h2 class="checkout-form__section">Payment Details</h2>
-      <div class="field" [class.field--error]="isInvalid('cardHolder')">
-        <label>Name on Card</label>
-        <input formControlName="cardHolder" placeholder="Jane Smith" />
-        @if (isInvalid('cardHolder')) { <span class="field__error">Required</span> }
-      </div>
-      <div class="field" [class.field--error]="isInvalid('cardNumber')">
-        <label>Card Number</label>
-        <input formControlName="cardNumber" placeholder="•••• •••• •••• ••••" maxlength="19" />
-      </div>
-      <div class="checkout-form__row">
-        <div class="field">
-          <label>Expiry</label>
-          <input formControlName="expiry" placeholder="MM / YY" maxlength="7" />
-        </div>
-        <div class="field">
-          <label>CVC</label>
-          <input formControlName="cvc" placeholder="•••" maxlength="3" type="password" />
-        </div>
-      </div>
-      <button type="submit" class="checkout-form__btn">Review Order →</button>
-    </form>
-  `,
+  templateUrl: './payment-form.html',
   styleUrls: ['../shipping-form/shipping-form.css']
 })
-export class PaymentFormComponent {
+export class PaymentForm {
   @Output() submitted = new EventEmitter<IPaymentInfo>();
   private fb = inject(FormBuilder);
   form = this.fb.group({
