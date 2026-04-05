@@ -1,0 +1,8 @@
+<div class="payments">
+    <span class="payments__label">We accept</span>
+    <div class="payments__icons">
+    @for (method of methods; track method) {
+        <span class="payments__method">{{ method }}</span>
+    }
+    </div>
+</div>
