@@ -2,9 +2,8 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightCard]',
-  standalone: true
 })
-export class HighlightCardDirective {
+export class HighlightCard {
   @Input() highlightColor: string = '#f5f5f5';
 
   constructor(private el: ElementRef) {}
@@ -17,4 +16,5 @@ export class HighlightCardDirective {
   @HostListener('mouseleave') onLeave() {
     this.el.nativeElement.style.backgroundColor = '';
   }
+
 }

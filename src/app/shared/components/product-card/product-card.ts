@@ -4,17 +4,15 @@ import { RouterLink } from '@angular/router';
 import { IProduct } from '../../../core/models/iproduct';
 import { Cart } from '../../../features/cart/services/cart';
 import { NotificationService } from '../../../core/services/notification';
-import { StarRatingComponent } from '../star-rating/star-rating';
-
+import { StarRating } from '../star-rating/star-rating';
 
 @Component({
   selector: 'app-product-card',
-  standalone: true,
-  imports: [CommonModule, RouterLink, StarRatingComponent],
+  imports: [CommonModule, RouterLink, StarRating],
   templateUrl: './product-card.html',
-  styleUrls: ['./product-card.css']
+  styleUrl: './product-card.css',
 })
-export class ProductCardComponent {
+export class ProductCard {
   @Input({ required: true }) product!: IProduct;
 
   constructor(

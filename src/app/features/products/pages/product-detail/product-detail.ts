@@ -5,14 +5,14 @@ import { IProduct } from '../../../../core/models/iproduct';
 import { Product } from '../../services/product';
 import { Cart } from '../../../cart/services/cart';
 import { NotificationService } from '../../../../core/services/notification';
-import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating';
+import { StarRating } from '../../../../shared/components/star-rating/star-rating';
 import { ProductReviews } from '../../components/product-reviews/product-reviews';
 import { RelatedProducts } from '../../components/related-products/related-products';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, StarRatingComponent, ProductReviews, RelatedProducts],
+  imports: [CommonModule, StarRating, ProductReviews, RelatedProducts],
   templateUrl: './product-detail.html',
   styleUrls: ['./product-detail.css']
 })

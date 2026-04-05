@@ -2,11 +2,11 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StaticProductsService } from '../../../../core/services/static-products';
 import { IProduct } from '../../../../core/models/iproduct';
-import { ProductCardComponent } from '../../../../shared/components/product-card/product-card';
+import { ProductCard } from '../../../../shared/components/product-card/product-card';
 
 @Component({
   selector: 'app-related-products',
-  imports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, ProductCard],
   templateUrl: './related-products.html',
   styleUrl: './related-products.css',
 })

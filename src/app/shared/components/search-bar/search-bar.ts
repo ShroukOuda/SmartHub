@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
-  standalone: true,
   imports: [FormsModule],
   templateUrl: './search-bar.html',
-  styleUrls: ['./search-bar.css']
+  styleUrl: './search-bar.css',
 })
-export class SearchBarComponent {
+export class SearchBar {
   @Output() searched = new EventEmitter<string>();
   query = signal('');
 

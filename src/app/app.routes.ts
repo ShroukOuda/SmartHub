@@ -35,6 +35,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    loadComponent: () => import('./shared/components/not-found/not-found').then(m => m.NotFoundComponent)
+    loadComponent: () => import('./shared/components/not-found/not-found').then(m => m.NotFound)
   }
 ];

@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { StaticProductsService } from '../../../../core/services/static-products';
 import { IProduct } from '../../../../core/models/iproduct';
-import { ProductCardComponent } from '../../../../shared/components/product-card/product-card';
+import { ProductCard } from '../../../../shared/components/product-card/product-card';
 
 @Component({
   selector: 'app-featured-products',
-  imports: [CommonModule, RouterLink, ProductCardComponent],
+  imports: [CommonModule, RouterLink, ProductCard],
   templateUrl: './featured-products.html',
   styleUrl: './featured-products.css',
 })

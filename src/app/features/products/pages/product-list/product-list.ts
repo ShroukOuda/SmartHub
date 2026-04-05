@@ -5,14 +5,14 @@ import { Product } from '../../services/product';
 import { IProductFilters } from '../../models/iproduct-filters';
 import { IProduct } from '../../../../core/models/iproduct';
 import { ICategory } from '../../../../core/models/icategory';
-import { ProductCardComponent } from '../../../../shared/components/product-card/product-card';
+import { ProductCard } from '../../../../shared/components/product-card/product-card';
 import { ProductFilters } from '../../components/product-filters/product-filters';
 import { ProductSorting } from '../../components/product-sorting/product-sorting';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent, ProductFilters, ProductSorting],
+  imports: [CommonModule, ProductCard, ProductFilters, ProductSorting],
   templateUrl: './product-list.html',
   styleUrls: ['./product-list.css']
 })

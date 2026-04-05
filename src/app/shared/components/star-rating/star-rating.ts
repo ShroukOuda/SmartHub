@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-star-rating',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './star-rating.html',
-  styleUrls: ['./star-rating.css']
+  styleUrl: './star-rating.css',
 })
-export class StarRatingComponent {
+export class StarRating {
   @Input() rating: number = 0;
   @Input() max: number = 5;
   @Input() size: 'sm' | 'md' | 'lg' = 'md';

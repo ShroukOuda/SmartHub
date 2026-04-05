@@ -2,9 +2,9 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appShadowCard]',
-  standalone: true
 })
-export class ShadowCardDirective {
+export class ShadowCard {
+
   constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onEnter() {
@@ -17,4 +17,5 @@ export class ShadowCardDirective {
     this.el.nativeElement.style.boxShadow = '';
     this.el.nativeElement.style.transform = '';
   }
+
 }

@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StarRatingComponent } from '../../../../shared/components/star-rating/star-rating';
+import { StarRating } from '../../../../shared/components/star-rating/star-rating';
 import { IReview } from '../../models/ireview';
 
 @Component({
   selector: 'app-product-reviews',
-  imports: [CommonModule, StarRatingComponent],
+  imports: [CommonModule, StarRating],
   templateUrl: './product-reviews.html',
   styleUrl: './product-reviews.css',
 })
