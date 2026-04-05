@@ -1,0 +1,18 @@
+<div class="auth-page">
+    <div class="auth-card">
+    <h1 class="auth-card__title">Sign in</h1>
+    <p class="auth-card__sub">Welcome back. <a routerLink="/user/register">Create account →</a></p>
+    @if (error()) { <div class="auth-card__error">{{ error() }}</div> }
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+        <div class="field">
+        <label>Email</label>
+        <input formControlName="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="field">
+        <label>Password</label>
+        <input formControlName="password" type="password" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="auth-form__btn" [disabled]="form.invalid">Sign In</button>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="profile-page">
+    <h1 class="profile-page__title">My Profile</h1>
+    @if (auth.currentUser(); as user) {
+    <div class="profile-page__layout">
+        <div class="profile-page__avatar-section">
+        <img [src]="user.avatar" [alt]="user.name" class="profile-page__avatar" />
+        <p class="profile-page__name">{{ user.name }}</p>
+        <p class="profile-page__email-display">{{ user.email }}</p>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="save()" class="auth-form">
+        <div class="field"><label>Full Name</label><input formControlName="name" /></div>
+        <div class="field"><label>Email</label><input formControlName="email" type="email" /></div>
+        <button type="submit" class="auth-form__btn">Save Changes</button>
+        </form>
+    </div>
+    }
+</div>

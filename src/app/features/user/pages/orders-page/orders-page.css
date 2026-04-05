@@ -1,0 +1,12 @@
+.orders-page { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+.orders-page__title { font-size: 26px; font-weight: 600; margin: 0 0 36px; }
+.orders-page__empty { text-align: center; padding: 60px 0; color: #aaa; }
+.orders-page__cta { display: inline-block; margin-top: 16px; padding: 12px 24px; background: #1a1a1a; color: #fff; text-decoration: none; border-radius: 3px; font-size: 14px; }
+.orders-list { display: flex; flex-direction: column; gap: 0; }
+.order-row { display: grid; grid-template-columns: 1fr auto auto auto; gap: 20px; align-items: center; padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+.order-row__id { font-size: 13px; font-weight: 500; color: #1a1a1a; display: block; }
+.order-row__date { font-size: 12px; color: #aaa; }
+.order-row__status { font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; background: #e8f5e9; color: #2e7d32; }
+.order-row__total { font-size: 14px; font-weight: 600; }
+.order-row__link { font-size: 13px; color: #888; text-decoration: none; }
+.order-row__link:hover { color: #1a1a1a; }

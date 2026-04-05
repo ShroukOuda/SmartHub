@@ -1,0 +1,11 @@
+.order-detail-page { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+.order-detail-page__header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+.order-detail-page__back { font-size: 14px; color: #888; text-decoration: none; }
+h1 { font-size: 20px; font-weight: 600; margin: 0; }
+.status { padding: 4px 12px; background: #e8f5e9; color: #2e7d32; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.order-detail-page__grid { display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
+@media (max-width: 600px) { .order-detail-page__grid { grid-template-columns: 1fr; } }
+h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em; color: #aaa; margin: 0 0 12px; }
+.oi { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid #f8f8f8; font-size: 14px; }
+.oi img { width: 48px; height: 48px; object-fit: cover; border-radius: 2px; }
+p { font-size: 14px; color: #555; line-height: 1.6; margin: 0 0 24px; }

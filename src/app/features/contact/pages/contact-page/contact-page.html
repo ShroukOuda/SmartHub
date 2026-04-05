@@ -1,0 +1,36 @@
+<div class="contact-page">
+    <div class="contact-page__header">
+    <h1>Get in Touch</h1>
+    <p>Questions, feedback, or just want to say hello. We read everything.</p>
+    </div>
+    <div class="contact-page__layout">
+    <div class="contact-info">
+        <div class="contact-info__item"><strong>Email</strong><span>hello&#64;smarthub.io</span></div>
+        <div class="contact-info__item"><strong>Phone</strong><span>+44 20 7946 0123</span></div>
+        <div class="contact-info__item"><strong>Hours</strong><span>Mon–Fri, 9am–6pm GMT</span></div>
+        <div class="contact-info__item"><strong>Address</strong><span>14 Clerkenwell Rd<br>London EC1M 5PQ</span></div>
+    </div>
+    @if (sent()) {
+        <div class="contact-page__success">
+        <span>✓</span>
+        <p>Message sent! We'll reply within 1 business day.</p>
+        </div>
+    } @else {
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="field">
+            <label>Name</label>
+            <input formControlName="name" placeholder="Your name" />
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input formControlName="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="field">
+            <label>Message</label>
+            <textarea formControlName="message" rows="5" placeholder="Tell us what's on your mind..."></textarea>
+        </div>
+        <button type="submit" [disabled]="form.invalid">Send Message</button>
+        </form>
+    }
+    </div>
+</div>

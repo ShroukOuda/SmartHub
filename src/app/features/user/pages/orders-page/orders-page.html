@@ -1,0 +1,23 @@
+<div class="orders-page">
+    <h1 class="orders-page__title">My Orders</h1>
+    @if (orderService.orders().length === 0) {
+    <div class="orders-page__empty">
+        <p>You haven't placed any orders yet.</p>
+        <a routerLink="/products" class="orders-page__cta">Start Shopping</a>
+    </div>
+    } @else {
+    <div class="orders-list">
+        @for (order of orderService.orders(); track order.id) {
+        <div class="order-row">
+            <div class="order-row__meta">
+            <span class="order-row__id">{{ order.id }}</span>
+            <span class="order-row__date">{{ order.createdAt | date:'mediumDate' }}</span>
+            </div>
+            <span class="order-row__status order-row__status--{{ order.status }}">{{ order.status }}</span>
+            <span class="order-row__total">\${{ order.total.toFixed(2) }}</span>
+            <a [routerLink]="['/user/orders', order.id]" class="order-row__link">View →</a>
+        </div>
+        }
+    </div>
+    }
+</div>

@@ -1,0 +1,39 @@
+<div class="about-page">
+    <div class="about-page__hero">
+    <div class="about-page__hero-badge">⚡ Founded 2019</div>
+    <h1>We make tech <span>accessible</span><br>for everyone.</h1>
+    <p>SmartHub was founded on one belief: the best technology should be within reach of everyone, not just the few. We've built the most trusted tech retail destination on the web.</p>
+    </div>
+    <div class="about-page__stats-row">
+    @for (stat of stats; track stat.label) {
+        <div class="about-page__stat">
+        <span class="about-page__stat-n">{{ stat.value }}</span>
+        <span class="about-page__stat-l">{{ stat.label }}</span>
+        </div>
+    }
+    </div>
+    <div class="about-page__image-break">
+    <img src="https://picsum.photos/seed/smarthub-team/1200/500" alt="SmartHub team" />
+    </div>
+    <div class="about-page__content">
+    <div class="about-page__section">
+        <h2>Our Mission</h2>
+        <p>To curate the world's best technology and deliver it with unmatched service. Every product in our catalog is tested and verified by our expert team before it goes live.</p>
+    </div>
+    <div class="about-page__section">
+        <h2>Why SmartHub</h2>
+        <p>Official authorized retailer for Apple, Samsung, Sony, Google, and 40+ leading brands. That means genuine products, full warranties, and manufacturer support.</p>
+    </div>
+    <div class="about-page__section">
+        <h2>The Team</h2>
+        <div class="team-grid">
+        @for (m of team; track m.name) {
+            <div class="team-card">
+            <img [src]="m.avatar" [alt]="m.name" />
+            <strong>{{ m.name }}</strong><span>{{ m.role }}</span>
+            </div>
+        }
+        </div>
+    </div>
+    </div>
+</div>

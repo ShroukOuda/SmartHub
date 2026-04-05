@@ -1,0 +1,12 @@
+<div class="static-page">
+    <h1>Frequently Asked Questions</h1>
+    @for (faq of faqs; track faq.q) {
+    <div class="faq-item" [class.faq-item--open]="faq.open">
+        <button class="faq-item__q" (click)="faq.open = !faq.open">
+        {{ faq.q }}
+        <span class="faq-item__icon">{{ faq.open ? '−' : '+' }}</span>
+        </button>
+        @if (faq.open) { <p class="faq-item__a">{{ faq.a }}</p> }
+    </div>
+    }
+</div>

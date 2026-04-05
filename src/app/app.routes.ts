@@ -27,7 +27,7 @@ export const routes: Routes = [
   },
   {
     path: 'about',
-    loadComponent: () => import('./features/about/pages/about-page/about-page').then(m => m.AboutPageComponent)
+    loadComponent: () => import('./features/about/pages/about-page/about-page').then(m => m.AboutPage)
   },
   {
     path: 'static',
