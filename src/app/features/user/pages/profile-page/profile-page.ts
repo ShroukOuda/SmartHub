@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService } from '../../../../core/services/auth';
-import { NotificationService } from '../../../../core/services/notification';
+import { Auth } from '../../../../core/services/auth';
+import { Notification } from '../../../../core/services/notification';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,9 +11,9 @@ import { NotificationService } from '../../../../core/services/notification';
   styleUrl: './profile-page.css',
 })
 export class ProfilePage implements OnInit {
-  public auth = inject(AuthService);
+  public auth = inject(Auth);
   private fb = inject(FormBuilder);
-  private notify = inject(NotificationService);
+  private notify = inject(Notification);
   form!: FormGroup;
 
   ngOnInit(): void {

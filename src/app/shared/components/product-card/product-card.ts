@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IProduct } from '../../../core/models/iproduct';
 import { Cart } from '../../../features/cart/services/cart';
-import { NotificationService } from '../../../core/services/notification';
+import { Notification } from '../../../core/services/notification';
 import { StarRating } from '../star-rating/star-rating';
 
 @Component({
@@ -17,7 +17,7 @@ export class ProductCard {
 
   constructor(
     private cart: Cart,
-    private notify: NotificationService
+    private notify: Notification
   ) {}
 
   addToCart(event: Event): void {

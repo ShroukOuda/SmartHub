@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../../core/services/auth';
+import { Auth } from '../../../../core/services/auth';
 
 @Component({
   selector: 'app-register-page',
@@ -12,7 +12,7 @@ import { AuthService } from '../../../../core/services/auth';
 })
 export class RegisterPage {
   private fb = inject(FormBuilder);
-  private auth = inject(AuthService);
+  private auth = inject(Auth);
   private router = inject(Router);
   form = this.fb.group({
     name:     ['', Validators.required],

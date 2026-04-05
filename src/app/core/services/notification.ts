@@ -1,15 +1,10 @@
 import { Injectable, signal } from '@angular/core';
+import { INotification, NotificationType } from '../models/inotification'
 
-export type NotificationType = 'success' | 'error' | 'info' | 'warning';
 
-export interface INotification {
-  id: number;
-  message: string;
-  type: NotificationType;
-}
 
 @Injectable({ providedIn: 'root' })
-export class NotificationService {
+export class Notification {
   readonly notifications = signal<INotification[]>([]);
   private counter = 0;
 

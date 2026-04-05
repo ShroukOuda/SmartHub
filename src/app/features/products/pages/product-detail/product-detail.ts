@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../../../core/models/iproduct';
 import { Product } from '../../services/product';
 import { Cart } from '../../../cart/services/cart';
-import { NotificationService } from '../../../../core/services/notification';
+import { Notification } from '../../../../core/services/notification';
 import { StarRating } from '../../../../shared/components/star-rating/star-rating';
 import { ProductReviews } from '../../components/product-reviews/product-reviews';
 import { RelatedProducts } from '../../components/related-products/related-products';
@@ -25,7 +25,7 @@ export class ProductDetail implements OnInit {
     private route: ActivatedRoute,
     private productService: Product,
     private cart: Cart,
-    private notify: NotificationService
+    private notify: Notification
   ) {}
 
   ngOnInit(): void {

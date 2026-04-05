@@ -3,7 +3,7 @@ import { IProduct } from '../models/iproduct';
 import { ICategory } from '../models/icategory';
 
 @Injectable({ providedIn: 'root' })
-export class StaticProductsService {
+export class StaticProducts {
 
   private products: IProduct[] = [
     { id: 1, name: 'MacBook Pro 14"', price: 1999, originalPrice: 2199,

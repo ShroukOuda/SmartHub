@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { StaticProductsService } from '../../../../core/services/static-products';
+import { StaticProducts } from '../../../../core/services/static-products';
 import { ICategory } from '../../../../core/models/icategory';
 
 @Component({
@@ -12,6 +12,6 @@ import { ICategory } from '../../../../core/models/icategory';
 })
 export class CategoriesShowcase implements OnInit {
   categories: ICategory[] = [];
-  private ps = inject(StaticProductsService);
+  private ps = inject(StaticProducts);
   ngOnInit(): void { this.categories = this.ps.getCategories(); }
 }

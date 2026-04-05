@@ -1,15 +1,10 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { Router } from '@angular/router';
+import { IAuthUser } from '../models/i-auth-user';
 
-export interface IAuthUser {
-  id: number;
-  name: string;
-  email: string;
-  avatar?: string;
-}
 
 @Injectable({ providedIn: 'root' })
-export class AuthService {
+export class Auth {
   private _currentUser = signal<IAuthUser | null>(this.loadUser());
   readonly currentUser = this._currentUser.asReadonly();
   readonly isLoggedIn = computed(() => this._currentUser() !== null);

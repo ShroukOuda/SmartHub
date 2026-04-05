@@ -4,7 +4,7 @@ import { MainNav } from '../components/main-nav/main-nav';
 import { CartIcon } from '../components/cart-icon/cart-icon';
 import { UserMenu } from '../components/user-menu/user-menu';
 import { SearchBar } from '../../../shared/components/search-bar/search-bar';
-import { ThemeService } from '../../../core/services/theme';
+import { Theme } from '../../../core/services/theme';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,5 +14,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.css',
 })
 export class Header {
-  theme = inject(ThemeService);
+  theme = inject(Theme);
 }

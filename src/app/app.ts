@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './layouts/header/header/header';
 import { Footer } from './layouts/footer/footer/footer';
 import { CommonModule } from '@angular/common';
-import { NotificationService } from './core/services/notification';
-import { ThemeService } from './core/services/theme';
+import { Notification } from './core/services/notification';
+import { Theme } from './core/services/theme';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,6 @@ import { ThemeService } from './core/services/theme';
   styleUrls: ['./app.css']
 })
 export class AppComponent {
-  notifications = inject(NotificationService);
-  private theme = inject(ThemeService); // eagerly init theme
+  notifications = inject(Notification);
+  private theme = inject(Theme); // eagerly init theme
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { StaticProductsService } from '../../../core/services/static-products';
+import { StaticProducts } from '../../../core/services/static-products';
 import { IProduct } from '../../../core/models/iproduct';
 import { IProductFilters } from '../models/iproduct-filters';
 
@@ -7,7 +7,7 @@ import { IProductFilters } from '../models/iproduct-filters';
 
 @Injectable({ providedIn: 'root' })
 export class Product {
-  constructor(private staticProducts: StaticProductsService) {}
+  constructor(private staticProducts: StaticProducts) {}
 
   getFiltered(filters: IProductFilters): IProduct[] {
     let products = this.staticProducts.getProducts();
